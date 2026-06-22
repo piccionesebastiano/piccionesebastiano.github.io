@@ -5,9 +5,9 @@
   --border: #ebebeb;
   --text: #222222;
   --text-dim: #6a6a6a;
-  --accent: #c75d3d;
-  --accent-dark: #a4472f;
-  --accent-soft: rgba(199, 93, 61, 0.10);
+  --accent: #ffa420;
+  --accent-dark: #955900;
+  --accent-soft: rgba(255, 164, 32, 0.12);
   --signal: #4f7a5b;
   --signal-soft: rgba(79, 122, 91, 0.12);
   --radius: 16px;
@@ -434,7 +434,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); }
 }
 
 .decision-callout {
-  background: #faf2ea;
+  background: #fff8ed;
   border-radius: var(--radius-sm);
   padding: 20px 24px;
   margin-bottom: 30px;
