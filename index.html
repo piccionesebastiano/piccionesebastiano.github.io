@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebastiano Piccione — Backend Engineer</title>
+<meta name="description" content="Sebastiano Piccione, Backend Engineer specializzato in sistemi e-commerce ad alto traffico, NestJS, PostgreSQL, GCP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a href="#home" class="logo">SP<span>.</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">Profilo</a>
+      <a href="#experience">Esperienza</a>
+      <a href="#projects">Progetti</a>
+      <a href="#skills">Competenze</a>
+      <a href="#contact">Contatti</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div class="container hero__inner">
+      <p class="hero__eyebrow">Backend Engineer · Pisa, Italia</p>
+      <h1>Sebastiano Piccione</h1>
+      <p class="hero__lead">
+        5+ anni di esperienza su sistemi e-commerce enterprise ad alto traffico.
+        Ownership end-to-end di architettura, infrastruttura e continuità operativa
+        su piattaforme fino a <span class="signal">20.000 utenti concorrenti</span> in produzione.
+      </p>
+      <div class="hero__cta">
+        <a href="#contact" class="btn btn--primary">Contattami</a>
+        <a href="#experience" class="btn btn--ghost">Guarda l'esperienza</a>
+      </div>
+
+      <div class="rail-wrap">
+        <div class="rail" role="img" aria-label="Percorso professionale dal 2021 a oggi: Slum, ISmartFrame, SpotView, con un incident risolto e un'iniziativa GDPR durante SpotView">
+          <div class="rail__track"></div>
+          <div class="rail__node rail__node--start" style="left:0%">
+            <span class="rail__dot"></span>
+            <span class="rail__label">2021<br>Slum</span>
+          </div>
+          <div class="rail__node" style="left:34%">
+            <span class="rail__dot"></span>
+            <span class="rail__label">2024<br>ISmartFrame</span>
+          </div>
+          <div class="rail__node" style="left:56%">
+            <span class="rail__dot"></span>
+            <span class="rail__label">2024<br>SpotView</span>
+          </div>
+          <div class="rail__node rail__node--end" style="left:100%">
+            <span class="rail__dot rail__dot--live"></span>
+            <span class="rail__label">Oggi</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section__title"><span>Chi sono</span> Profilo</h2>
+      <p class="about__text">
+        Backend Engineer con esperienza end-to-end su sistemi e-commerce ad alto traffico
+        e architetture orientate a performance e affidabilità. Gestione di picchi fino a
+        20.000 utenti concorrenti in produzione (Black Friday) per il cliente Pinalli,
+        ownership end-to-end di un sistema CMS containerizzato (Strapi su GCP Cloud Run)
+        e capacità dimostrata di guidare decisioni architetturali, anche in contesti di
+        disaccordo con stakeholder tecnici e di business. Esperienza complementare in
+        microservizi real-time, integrazione di API esterne (AI, scraping) e,
+        occasionalmente, supporto frontend su dashboard interne.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title"><span>Il percorso</span> Esperienza Professionale</h2>
+
+      <div class="timeline">
+
+        <article class="job">
+          <div class="job__header">
+            <div>
+              <h3>Backend Engineer <span class="job__company">@ SpotView</span></h3>
+              <p class="job__meta">Nov 2024 – Presente · Full-time · Remoto, Italia</p>
+            </div>
+          </div>
+          <p class="job__intro">Owner del backend e-commerce enterprise per il cliente Pinalli (NestJS, PostgreSQL), in un team di 5 backend engineer.</p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat__num">20.000</span>
+              <span class="stat__label">utenti concorrenti gestiti in produzione (Black Friday)</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">40K</span>
+              <span class="stat__label">prodotti su cui l'aggiornamento listini è passato da 3–4h a automatico</span>
+            </div>
+            <div class="stat stat--signal">
+              <span class="stat__num">200→30</span>
+              <span class="stat__label">container stabilizzati dopo un incident critico in produzione</span>
+            </div>
+          </div>
+
+          <div class="narrative-grid">
+            <div class="narrative-block">
+              <h4>Scala &amp; performance</h4>
+              <ul class="job__list">
+                <li>Riprogettato il sistema listini prezzi da aggiornamento seriale a modello precaricato con applicazione automatica, adottato su 3 e-commerce headless.</li>
+                <li>Deciso e implementato, in alternativa alla proposta del team di usare Redis lato frontend, un sistema di cache HTML statica su bucket GCP con invalidazione per URL.</li>
+                <li>Automatizzata l'invalidazione della cache (prima ~2 interventi manuali al giorno), eliminando il rischio di errore umano e i tempi legati ai ticket.</li>
+              </ul>
+            </div>
+            <div class="narrative-block">
+              <h4>Stabilità &amp; incident response</h4>
+              <ul class="job__list">
+                <li>Owner end-to-end di Strapi: implementazione, feature e gestione incidenti su container GCP Cloud Run.</li>
+                <li>Diagnosticato un incidente critico (process manager in fork invece di cluster) che generava un loop di ~200 container; hotfix immediato e tuning dei parametri di startup/readiness.</li>
+              </ul>
+            </div>
+            <div class="narrative-block">
+              <h4>Integrazioni &amp; resilienza</h4>
+              <ul class="job__list">
+                <li>Analisi diretta con il CTO esterno del cliente sul retry/backoff per le chiamate a Shopify (riduzione dinamica di batch e concorrenza su 429/timeout).</li>
+                <li>Integrazione con Azure Service Bus per la sincronizzazione bidirezionale con i sistemi esterni del cliente.</li>
+                <li>Sistema di gestione webhook (BullMQ) con retry a backoff incrementale e alerting dedicato.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tech-pills">
+            <span class="tech-pill">NestJS</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">GCP Cloud Run</span>
+            <span class="tech-pill">Strapi</span>
+            <span class="tech-pill">BullMQ</span>
+            <span class="tech-pill">Azure Service Bus</span>
+            <span class="tech-pill">Grafana</span>
+            <span class="tech-pill">Sentry</span>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job__header">
+            <div>
+              <h3>Software Engineer <span class="job__company">@ ISmartFrame</span></h3>
+              <p class="job__meta">Gen 2024 – Nov 2024 · Full-time · Pisa</p>
+            </div>
+          </div>
+          <p class="job__intro">SaaS enterprise per controllo e distribuzione di contenuti web.</p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat__num">2 gg/sett.</span>
+              <span class="stat__label">di controllo manuale eliminati dal reparto SEO</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">100%</span>
+              <span class="stat__label">automazione dei controlli SEO post-scraping</span>
+            </div>
+          </div>
+
+          <div class="narrative-grid">
+            <div class="narrative-block">
+              <h4>Automazione &amp; impatto</h4>
+              <ul class="job__list">
+                <li>Sviluppati microservizi (Node.js/TypeScript) per l'automazione di controlli SEO post-scraping (H1, hreflang, parametri tecnici), con generazione automatica di alert e report.</li>
+              </ul>
+            </div>
+            <div class="narrative-block">
+              <h4>Cache &amp; frontend</h4>
+              <ul class="job__list">
+                <li>Implementata logica di cache HTML differenziata per user-agent, con focus su coerenza del contenuto servito.</li>
+                <li><span class="tag">FE</span> Manutenzione e sviluppo feature per la dashboard enterprise di gestione alert SEO.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tech-pills">
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">Web Scraping</span>
+            <span class="tech-pill">SEO Automation</span>
+            <span class="tech-pill">Cache HTML</span>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job__header">
+            <div>
+              <h3>Software Developer <span class="job__company">@ Slum</span></h3>
+              <p class="job__meta">Giu 2021 – Nov 2023 · Full-time · Firenze, Italia</p>
+            </div>
+          </div>
+          <p class="job__intro">Agenzia digitale, sviluppo backend e e-commerce custom per clienti.</p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span class="stat__num">~200</span>
+              <span class="stat__label">utenti simultanei su un sistema di aste real-time, senza race condition</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">v2.0</span>
+              <span class="stat__label">migrazione template Tally completata senza perdita di dati</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">2+</span>
+              <span class="stat__label">prodotti interni guidati end-to-end (Tally, Uboat)</span>
+            </div>
+          </div>
+
+          <div class="narrative-grid">
+            <div class="narrative-block">
+              <h4>Uboat — aste real-time</h4>
+              <ul class="job__list">
+                <li>Progettato un microservizio real-time (WebSocket, Node.js) per la gestione di aste su prodotti, con coda per serializzare offerte concorrenti.</li>
+              </ul>
+            </div>
+            <div class="narrative-block">
+              <h4>Tally — piattaforma landing page</h4>
+              <ul class="job__list">
+                <li>Guidata la migrazione dei template alla v2.0: script di migrazione DynamoDB con fallback a default, senza perdita di dati su template legacy.</li>
+                <li>Integrazione dell'API OpenAI per la generazione automatica di contenuti testuali e di Magic Link per l'autenticazione utenti.</li>
+              </ul>
+            </div>
+            <div class="narrative-block">
+              <h4>Stack &amp; deploy multi-cliente</h4>
+              <ul class="job__list">
+                <li>Sviluppo backend monolitici (Node.js, NestJS, Express) e e-commerce (Next.js, Strapi, Medusa.js) per clienti dell'agenzia.</li>
+                <li>Deploy e gestione infrastruttura su AWS, Netlify e server Linux (Nginx, SSL, PM2).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tech-pills">
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">NestJS</span>
+            <span class="tech-pill">WebSocket</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">DynamoDB</span>
+            <span class="tech-pill">OpenAI API</span>
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">Nginx</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section__title"><span>Case study</span> Progetti</h2>
+
+      <div class="project-showcase">
+        <div class="project-showcase__header">
+          <div>
+            <p class="project-showcase__eyebrow">Side project personale · 2023 – 2024</p>
+            <h3>EasyDrink <span class="job__company">→ Steal Drink</span></h3>
+            <p class="project-showcase__tagline">App di offerte su aperitivi e locali. Da idea a prodotto live in 20 locali a Pisa.</p>
+          </div>
+          <a href="https://stealdrink.com/" target="_blank" rel="noopener" class="btn btn--primary project-showcase__cta">
+            Visita stealdrink.com ↗
+          </a>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat__num">20</span>
+            <span class="stat__label">locali attivi a Pisa</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">2→1</span>
+            <span class="stat__label">app unificate in un solo prodotto</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">v2</span>
+            <span class="stat__label">backend riscritto da zero</span>
+          </div>
+        </div>
+
+        <div class="narrative-grid">
+          <div class="narrative-block">
+            <h4>Il problema</h4>
+            <p>La v1 era divisa in due app separate — una per gli utenti, una per i locali — con flussi disallineati, duplicazione di logica e un'esperienza di onboarding poco scalabile per i merchant. Per crescere oltre i primi locali pilota serviva un ridisegno strutturale, non una patch.</p>
+          </div>
+          <div class="narrative-block">
+            <h4>La soluzione</h4>
+            <p>Migrazione a un'unica applicazione (v2): backend riscritto da zero in NestJS/TypeScript, con un modello dati pensato per scalare su più città e un flusso di onboarding self-service per i locali (profilo, offerte, gestione scorte) che ha sostituito la configurazione manuale della v1.</p>
+          </div>
+          <div class="narrative-block">
+            <h4>Dettagli tecnici</h4>
+            <ul class="job__list">
+              <li>API di ricerca geolocalizzata dei locali, progettata per essere indipendente dalla città — propedeutica all'espansione oltre Pisa.</li>
+              <li>Storage e cache delle immagini delle offerte con invalidazione legata all'esaurimento reale delle scorte, evitando di servire contenuti relativi a offerte già terminate.</li>
+              <li>Flusso di onboarding merchant pensato per essere autonomo, riducendo il supporto manuale necessario per attivare un nuovo locale.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tech-pills">
+          <span class="tech-pill">NestJS</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Geolocalizzazione</span>
+          <span class="tech-pill">Cache immagini</span>
+          <span class="tech-pill">Onboarding merchant</span>
+        </div>
+      </div>
+
+      <div class="project-showcase">
+        <div class="project-showcase__header">
+          <div>
+            <p class="project-showcase__eyebrow">Progetto interno @ SpotView · ~50 dipendenti impattati</p>
+            <h3>Sync Factorial <span class="job__company">→ Google Calendar → Atlassian Tempo</span></h3>
+            <p class="project-showcase__tagline">Automazione end-to-end di ferie e permessi tra HR, calendario e timesheet, nata da una lamentela diffusa in azienda e portata avanti in autonomia da idea a tool in produzione.</p>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span class="stat__num">50+</span>
+            <span class="stat__label">dipendenti che usano la sincronizzazione ogni giorno</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">3</span>
+            <span class="stat__label">sistemi integrati end-to-end (Factorial, Calendar, Tempo)</span>
+          </div>
+          <div class="stat stat--signal">
+            <span class="stat__num">1→0</span>
+            <span class="stat__label">check manuale settimanale sulle ferie eliminato per il management</span>
+          </div>
+        </div>
+
+        <div class="narrative-grid">
+          <div class="narrative-block">
+            <h4>Il problema</h4>
+            <p>Una lamentela condivisa con i colleghi, non una richiesta dall'alto: ferie e permessi vivevano in Factorial ma dovevano riflettersi a mano su Google Calendar e sui ticket Atlassian Tempo. Ogni assenza significava passaggi manuali per il dipendente, HR che rincorreva le persone per gli aggiustamenti, e il management che ogni settimana doveva controllare a mano tutte le ferie pianificate.</p>
+          </div>
+          <div class="narrative-block">
+            <h4>La soluzione</h4>
+            <p>Costruito da zero un servizio di sincronizzazione con task real-time e un polling orario dedicato agli eventi dello stesso giorno (dove il real-time non basta), mappatura dei tipi di permesso/ticket tra i tre sistemi, dashboard admin con log degli errori, notifiche su Google Chat con pulsanti d'azione differenziati per tecnici e HR, e accesso via Google login con ruoli admin/viewer.</p>
+          </div>
+        </div>
+
+        <div class="decision-callout">
+          <p class="decision-callout__label">Decisione architetturale — iniziativa personale</p>
+          <p>Durante lo sviluppo ho identificato che il polling delle API Factorial esponeva dati personali non necessari al caso d'uso (invalidità, numeri di telefono). Ho proposto e implementato in autonomia il passaggio a un sistema basato su webhook Factorial, eliminando la necessità di interrogare e trattare quei dati — riducendo la superficie di esposizione a dati sensibili e migliorando la compliance GDPR del sistema.</p>
+        </div>
+
+        <div class="tech-pills">
+          <span class="tech-pill">NestJS</span>
+          <span class="tech-pill">GCP VM</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Factorial Webhooks</span>
+          <span class="tech-pill">Google Calendar API</span>
+          <span class="tech-pill">Atlassian Tempo</span>
+          <span class="tech-pill">Google Chat API</span>
+          <span class="tech-pill">Google OAuth</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title"><span>Lo stack</span> Competenze Tecniche</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <p>Node.js, NestJS, TypeScript, Express</p>
+        </div>
+        <div class="skill-group">
+          <h4>Database</h4>
+          <p>PostgreSQL, DynamoDB</p>
+        </div>
+        <div class="skill-group">
+          <h4>Cloud &amp; Infrastruttura</h4>
+          <p>GCP (Cloud Run, VM, Cloud Storage), AWS, Cloudflare, PM2, Nginx, Docker, GitHub Actions</p>
+        </div>
+        <div class="skill-group">
+          <h4>Architetture</h4>
+          <p>Sistemi ad alto traffico, caching multilivello, invalidazione cache, comunicazione real-time (WebSocket), elaborazione asincrona</p>
+        </div>
+        <div class="skill-group">
+          <h4>Messaging &amp; Async</h4>
+          <p>BullMQ, Azure Service Bus, GCP Pub/Sub, NestJS Task Scheduler</p>
+        </div>
+        <div class="skill-group">
+          <h4>Testing</h4>
+          <p>Unit, integration, E2E; load testing con k6</p>
+        </div>
+        <div class="skill-group">
+          <h4>Monitoring &amp; Observability</h4>
+          <p>Grafana, Sentry, GCP Monitoring</p>
+        </div>
+        <div class="skill-group">
+          <h4>Integrazioni</h4>
+          <p>API OpenAI, provider di autenticazione esterni (Magic Link)</p>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend (supporto)</h4>
+          <p>React, Next.js, Flutter</p>
+        </div>
+      </div>
+
+      <div class="meta-grid">
+        <div>
+          <h4>Istruzione</h4>
+          <p>CdL in Informatica — Università di Pisa <span class="muted">(2018–2020)</span></p>
+        </div>
+        <div>
+          <h4>Lingue</h4>
+          <p>Italiano: madrelingua · Inglese: B2 · Spagnolo: intermedio</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container contact">
+      <h2 class="section__title"><span>Scrivimi</span> Contatti</h2>
+      <p class="contact__lead">Sempre disponibile per nuove opportunità e collaborazioni.</p>
+      <div class="contact__grid">
+        <a class="contact__item" href="mailto:piccionesebastiano40@gmail.com">
+          <span class="contact__label">Email</span>
+          <span class="contact__value">piccionesebastiano40@gmail.com</span>
+        </a>
+        <a class="contact__item" href="tel:+393888199400">
+          <span class="contact__label">Telefono</span>
+          <span class="contact__value">+39 388 819 9400</span>
+        </a>
+        <a class="contact__item" href="https://linkedin.com/in/sebastiano-piccione" target="_blank" rel="noopener">
+          <span class="contact__label">LinkedIn</span>
+          <span class="contact__value">linkedin.com/in/sebastiano-piccione</span>
+        </a>
+        <div class="contact__item contact__item--static">
+          <span class="contact__label">Località</span>
+          <span class="contact__value">Pisa, Italia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Sebastiano Piccione</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
