@@ -7,11 +7,11 @@
 <meta name="description" content="Sebastiano Piccione, Backend Engineer specializzato in sistemi e-commerce ad alto traffico, NestJS, PostgreSQL, GCP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://visionary-licorice-702dd5.netlify.app/chat-widget.css" />
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -19,12 +19,13 @@
   <div class="container navbar__inner">
     <a href="#home" class="logo">SP<span>.</span></a>
     <nav class="nav-links" id="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">Profilo</a>
-      <a href="#experience">Esperienza</a>
-      <a href="#projects">Progetti</a>
-      <a href="#skills">Competenze</a>
-      <a href="#contact">Contatti</a>
+      <a href="#home">home</a>
+      <a href="#now">ora</a>
+      <a href="#ask">assistente</a>
+      <a href="#experience">esperienza</a>
+      <a href="#projects">progetti</a>
+      <a href="#skills">competenze</a>
+      <a href="#contact">contatti</a>
     </nav>
     <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu">
       <span></span><span></span><span></span>
@@ -36,15 +37,40 @@
 
   <section id="home" class="hero">
     <div class="container hero__inner">
-      <p class="hero__eyebrow">Backend Engineer · Pisa, Italia</p>
+      <p class="hero__eyebrow">
+        <span class="live-dot" aria-hidden="true"></span>
+        Backend Engineer · Pisa, Italia
+      </p>
       <h1>Sebastiano Piccione</h1>
+      <div class="hero__rule"></div>
       <p class="hero__lead">
         5+ anni di esperienza su sistemi e-commerce enterprise ad alto traffico.
-        Ownership end-to-end di architettura, infrastruttura e continuità operativa
-        su piattaforme fino a <span class="signal">20.000 utenti concorrenti</span> in produzione.
+        Backend owner per il cliente Pinalli, con picchi fino a
+        <span class="signal">20.000 utenti concorrenti</span> in produzione.
+        Esperienza in integrazioni event-driven, microservizi real-time e automazione di processi interni.
       </p>
+
+      <dl class="status-panel">
+        <div class="status-panel__row">
+          <dt class="status-panel__key">ruolo</dt>
+          <dd class="status-panel__val">Backend Engineer</dd>
+        </div>
+        <div class="status-panel__row">
+          <dt class="status-panel__key">sede</dt>
+          <dd class="status-panel__val">Pisa, Italia</dd>
+        </div>
+        <div class="status-panel__row">
+          <dt class="status-panel__key">modalità</dt>
+          <dd class="status-panel__val status-panel__val--accent"><span class="live-dot" aria-hidden="true"></span>full-remote</dd>
+        </div>
+        <div class="status-panel__row">
+          <dt class="status-panel__key">lingue</dt>
+          <dd class="status-panel__val">IT · EN B2 · ES</dd>
+        </div>
+      </dl>
+
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--primary">Contattami</a>
+        <a href="#ask" class="btn btn--primary">Chiedi al bot ↓</a>
         <a href="#experience" class="btn btn--ghost">Guarda l'esperienza</a>
       </div>
 
@@ -72,23 +98,38 @@
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="now" class="section">
     <div class="container">
-      <h2 class="section__title"><span>Chi sono</span> Profilo</h2>
-      <p class="about__text">
-        Backend Engineer con esperienza end-to-end su sistemi e-commerce ad alto traffico
-        e architetture orientate a performance e affidabilità. Gestione di picchi fino a
-        20.000 utenti concorrenti in produzione (Black Friday) per il cliente Pinalli,
-        ownership end-to-end di un sistema CMS containerizzato (Strapi su GCP Cloud Run)
-        e capacità dimostrata di guidare decisioni architetturali, anche in contesti di
-        disaccordo con stakeholder tecnici e di business. Esperienza complementare in
-        microservizi real-time, integrazione di API esterne (AI, scraping) e,
-        occasionalmente, supporto frontend su dashboard interne.
-      </p>
+      <p class="section__kicker">// ora</p>
+      <div class="now-panel">
+        <p class="now-panel__header">~/ora $ cat status.md</p>
+        <p>Sto approfondendo la costruzione di agenti e strumenti basati su LLM pensati per reggere in produzione, non solo demo — è così che è nato l'assistente qui sotto.</p>
+        <p>In parallelo affino le pratiche di observability (metriche, alerting, dashboard) che uso ogni giorno su SpotView.</p>
+      </div>
     </div>
   </section>
 
-  <section id="experience" class="section section--alt">
+  <section id="ask" class="section">
+    <div class="container">
+      <p class="section__kicker">// assistente</p>
+      <h2 class="section__title" style="margin-bottom:24px;">Chiedi a Sebastiano</h2>
+      <p class="ask-lead">Un assistente addestrato sul mio CV. Chiedi di un progetto, dello stack o di una decisione tecnica — risponde con quello che sa davvero.</p>
+
+      <div class="terminal">
+        <div class="terminal__bar">
+          <span class="terminal__dot terminal__dot--r"></span>
+          <span class="terminal__dot terminal__dot--y"></span>
+          <span class="terminal__dot terminal__dot--g"></span>
+          <span class="terminal__label">sebastiano@cv:~$</span>
+        </div>
+        <div class="terminal__body">
+          <div id="cv-chat-widget"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
     <div class="container">
       <h2 class="section__title"><span>Il percorso</span> Esperienza Professionale</h2>
 
@@ -101,20 +142,38 @@
               <p class="job__meta">Nov 2024 – Presente · Full-time · Remoto, Italia</p>
             </div>
           </div>
-          <p class="job__intro">Owner del backend e-commerce enterprise per il cliente Pinalli (NestJS, PostgreSQL), in un team di 5 backend engineer.</p>
+          <p class="job__intro">Backend e-commerce headless per il cliente Pinalli (NestJS, PostgreSQL, GCP), in un team di 5 backend engineer. Full-remote.</p>
 
-          <div class="stats-row">
-            <div class="stat">
-              <span class="stat__num">20.000</span>
-              <span class="stat__label">utenti concorrenti gestiti in produzione (Black Friday)</span>
+          <div class="metric-grid">
+            <div class="metric metric--signal">
+              <span class="metric__label">utenti concorrenti · black friday</span>
+              <span class="metric__num" data-countup data-target="20000">20.000</span>
+              <svg class="metric__spark" viewBox="0 0 64 22" preserveAspectRatio="none" aria-hidden="true">
+                <polyline class="spark-line draw-path" points="2,20 12,19 22,10 32,4 42,7 52,14 62,18"/>
+              </svg>
             </div>
-            <div class="stat">
-              <span class="stat__num">40K</span>
-              <span class="stat__label">prodotti su cui l'aggiornamento listini è passato da 3–4h a automatico</span>
+            <div class="metric">
+              <span class="metric__label">prodotti · listini da 3–4h manuali ad automatico</span>
+              <span class="metric__num" data-countup data-target="40" data-suffix="K">40K</span>
+              <svg class="metric__spark" viewBox="0 0 64 22" preserveAspectRatio="none" aria-hidden="true">
+                <rect class="spark-bar" x="3" y="3" width="9" height="19" fill="var(--ink-3)"/>
+                <rect class="spark-bar" x="16" y="8" width="9" height="14" fill="var(--ink-3)"/>
+                <rect class="spark-bar" x="29" y="14" width="9" height="8" fill="var(--ink-3)"/>
+                <line class="spark-line draw-path" x1="42" y1="18" x2="62" y2="18"/>
+              </svg>
             </div>
-            <div class="stat stat--signal">
-              <span class="stat__num">200→30</span>
-              <span class="stat__label">container stabilizzati dopo un incident critico in produzione</span>
+            <div class="metric">
+              <div class="metric__top">
+                <span class="metric__label">container in produzione</span>
+                <span class="metric__state"><span class="metric__state-dot"></span>warning → ok</span>
+              </div>
+              <span class="metric__num">200 → 30</span>
+              <svg class="metric__spark" viewBox="0 0 64 22" preserveAspectRatio="none" aria-hidden="true">
+                <rect class="spark-bar" x="4" y="2" width="10" height="20" fill="var(--amber)"/>
+                <rect class="spark-bar" x="18" y="4" width="10" height="18" fill="var(--amber)"/>
+                <rect class="spark-bar" x="32" y="15" width="10" height="7" fill="var(--accent)"/>
+                <rect class="spark-bar" x="46" y="16" width="10" height="6" fill="var(--accent)"/>
+              </svg>
             </div>
           </div>
 
@@ -122,26 +181,85 @@
             <div class="narrative-block">
               <h4>Scala &amp; performance</h4>
               <ul class="job__list">
-                <li>Riprogettato il sistema listini prezzi da aggiornamento seriale a modello precaricato con applicazione automatica, adottato su 3 e-commerce headless.</li>
-                <li>Deciso e implementato, in alternativa alla proposta del team di usare Redis lato frontend, un sistema di cache HTML statica su bucket GCP con invalidazione per URL.</li>
-                <li>Automatizzata l'invalidazione della cache (prima ~2 interventi manuali al giorno), eliminando il rischio di errore umano e i tempi legati ai ticket.</li>
+                <li>Riprogettato il sistema listini prezzi: da aggiornamento seriale (3–4 ore su ~40.000 prodotti) a modello precaricato con validità programmata e applicazione automatica, adottato su 3 e-commerce headless.</li>
+                <li>In alternativa alla proposta del team di usare Redis lato frontend — le chiamate non supportavano invalidazione granulare per tag — scelto e implementato una cache HTML statica su bucket GCP con invalidazione per URL, resa automatica (prima ~2 interventi manuali/giorno).</li>
               </ul>
             </div>
             <div class="narrative-block">
               <h4>Stabilità &amp; incident response</h4>
               <ul class="job__list">
-                <li>Owner end-to-end di Strapi: implementazione, feature e gestione incidenti su container GCP Cloud Run.</li>
-                <li>Diagnosticato un incidente critico (process manager in fork invece di cluster) che generava un loop di ~200 container; hotfix immediato e tuning dei parametri di startup/readiness.</li>
+                <li>Owner end-to-end di Strapi (CMS containerizzato su GCP Cloud Run): diagnosticato un incidente dovuto a una misconfigurazione del process manager (fork invece di cluster) che saturava le connessioni al database, generando un loop di ~200 container; hotfix e tuning dei parametri di startup/readiness, sistema stabilizzato a 30 container.</li>
+                <li>Monitoring e alerting con Grafana, GCP Monitoring e Sentry.</li>
               </ul>
             </div>
             <div class="narrative-block">
-              <h4>Integrazioni &amp; resilienza</h4>
+              <h4>Integrazioni event-driven &amp; resilienza</h4>
               <ul class="job__list">
-                <li>Analisi diretta con il CTO esterno del cliente sul retry/backoff per le chiamate a Shopify (riduzione dinamica di batch e concorrenza su 429/timeout).</li>
-                <li>Integrazione con Azure Service Bus per la sincronizzazione bidirezionale con i sistemi esterni del cliente.</li>
-                <li>Sistema di gestione webhook (BullMQ) con retry a backoff incrementale e alerting dedicato.</li>
+                <li>Realizzato il layer di integrazione event-driven con i sistemi del cliente: sincronizzazione bidirezionale di stock e ordini via Azure Service Bus, consumo dei webhook con BullMQ (retry a backoff esponenziale, alerting sui fallimenti).</li>
+                <li>Proposto e definito con il CTO esterno del cliente il sistema di retry/backoff per le API Shopify (riduzione dinamica di batch e concorrenza su 429/timeout).</li>
               </ul>
             </div>
+            <div class="narrative-block">
+              <h4>Automazione interna</h4>
+              <ul class="job__list">
+                <li>Proposto e sviluppato autonomamente un tool di automazione HR (Factorial → Google Calendar → Atlassian Tempo via webhook) a servizio di ~50 colleghi, webhook invece di polling per vincoli GDPR — <a href="#projects" class="inline-link">case study ↓</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="diagram-block">
+            <p class="diagram-block__label">// architettura — cache invalidation</p>
+            <div class="diagram-scroll-wrap">
+            <div class="diagram-scroll">
+              <svg class="diagram" viewBox="0 0 760 260" role="img" aria-label="Diagramma: richiesta utente arriva alla cache HTML statica su bucket GCP; in caso di hit viene servita la pagina statica, in caso di miss la pagina viene generata e salvata; l'invalidazione per URL è automatica e aggiorna la cache.">
+                <defs>
+                  <marker id="arrow-accent-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+                  </marker>
+                </defs>
+
+                <g class="dgm-node">
+                  <rect x="16" y="90" width="130" height="54" rx="6"/>
+                  <text x="81" y="113" text-anchor="middle" class="dgm-node-title">Richiesta</text>
+                  <text x="81" y="129" text-anchor="middle" class="dgm-node-sub">utente</text>
+                </g>
+
+                <g class="dgm-node dgm-node--accent">
+                  <rect x="210" y="90" width="210" height="54" rx="6"/>
+                  <text x="315" y="113" text-anchor="middle" class="dgm-node-title">Cache HTML statica</text>
+                  <text x="315" y="129" text-anchor="middle" class="dgm-node-sub">bucket GCP</text>
+                </g>
+
+                <g class="dgm-node">
+                  <rect x="500" y="26" width="220" height="50" rx="6"/>
+                  <text x="610" y="48" text-anchor="middle" class="dgm-node-title">HIT</text>
+                  <text x="610" y="64" text-anchor="middle" class="dgm-node-sub">risposta statica servita</text>
+                </g>
+
+                <g class="dgm-node">
+                  <rect x="500" y="134" width="220" height="54" rx="6"/>
+                  <text x="610" y="157" text-anchor="middle" class="dgm-node-title">MISS</text>
+                  <text x="610" y="173" text-anchor="middle" class="dgm-node-sub">genera pagina + salva</text>
+                </g>
+
+                <g class="dgm-node dgm-node--accent">
+                  <rect x="210" y="192" width="210" height="54" rx="6"/>
+                  <text x="315" y="215" text-anchor="middle" class="dgm-node-title">Invalidazione per URL</text>
+                  <text x="315" y="231" text-anchor="middle" class="dgm-node-sub">automatica</text>
+                </g>
+
+                <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-1)" d="M146,117 L206,117"/>
+                <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-1)" d="M420,102 C462,80 480,62 496,54"/>
+                <text x="450" y="82" class="dgm-label">hit</text>
+                <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-1)" d="M420,132 C462,152 480,158 496,160"/>
+                <text x="450" y="152" class="dgm-label">miss</text>
+                <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-1)" d="M315,190 L315,148"/>
+                <text x="330" y="172" class="dgm-label">trigger su update prodotto</text>
+              </svg>
+            </div>
+            <p class="diagram-scroll-hint">← scorri per vedere tutto il diagramma →</p>
+            </div>
+            <p class="diagram-annotation">Prima: <s>~2 interventi manuali/giorno</s> — ora: <strong>invalidazione automatica per URL</strong>.</p>
           </div>
 
           <div class="tech-pills">
@@ -165,14 +283,10 @@
           </div>
           <p class="job__intro">SaaS enterprise per controllo e distribuzione di contenuti web.</p>
 
-          <div class="stats-row">
-            <div class="stat">
-              <span class="stat__num">2 gg/sett.</span>
-              <span class="stat__label">di controllo manuale eliminati dal reparto SEO</span>
-            </div>
-            <div class="stat">
-              <span class="stat__num">100%</span>
-              <span class="stat__label">automazione dei controlli SEO post-scraping</span>
+          <div class="metric-grid">
+            <div class="metric">
+              <span class="metric__label">giorni/sett. di controllo manuale eliminati dal reparto SEO</span>
+              <span class="metric__num">2 gg</span>
             </div>
           </div>
 
@@ -180,14 +294,7 @@
             <div class="narrative-block">
               <h4>Automazione &amp; impatto</h4>
               <ul class="job__list">
-                <li>Sviluppati microservizi (Node.js/TypeScript) per l'automazione di controlli SEO post-scraping (H1, hreflang, parametri tecnici), con generazione automatica di alert e report.</li>
-              </ul>
-            </div>
-            <div class="narrative-block">
-              <h4>Cache &amp; frontend</h4>
-              <ul class="job__list">
-                <li>Implementata logica di cache HTML differenziata per user-agent, con focus su coerenza del contenuto servito.</li>
-                <li><span class="tag">FE</span> Manutenzione e sviluppo feature per la dashboard enterprise di gestione alert SEO.</li>
+                <li>Sviluppati microservizi (Node.js/TypeScript) per l'automazione di controlli SEO post-scraping (verifica di H1, hreflang e altri parametri tecnici), con alert e report automatici.</li>
               </ul>
             </div>
           </div>
@@ -197,7 +304,6 @@
             <span class="tech-pill">TypeScript</span>
             <span class="tech-pill">Web Scraping</span>
             <span class="tech-pill">SEO Automation</span>
-            <span class="tech-pill">Cache HTML</span>
           </div>
         </article>
 
@@ -210,33 +316,40 @@
           </div>
           <p class="job__intro">Agenzia digitale, sviluppo backend e e-commerce custom per clienti.</p>
 
-          <div class="stats-row">
-            <div class="stat">
-              <span class="stat__num">~200</span>
-              <span class="stat__label">utenti simultanei su un sistema di aste real-time, senza race condition</span>
+          <div class="metric-grid">
+            <div class="metric metric--signal">
+              <span class="metric__label">utenti simultanei · aste real-time, zero race condition</span>
+              <span class="metric__num" data-countup data-target="200" data-prefix="~">~200</span>
+              <svg class="metric__spark" viewBox="0 0 64 22" preserveAspectRatio="none" aria-hidden="true">
+                <line class="spark-line draw-path" x1="2" y1="11" x2="62" y2="11"/>
+                <circle class="spark-dot" cx="8" cy="11" r="2"/>
+                <circle class="spark-dot" cx="24" cy="11" r="2"/>
+                <circle class="spark-dot" cx="40" cy="11" r="2"/>
+                <circle class="spark-dot" cx="56" cy="11" r="2"/>
+              </svg>
             </div>
-            <div class="stat">
-              <span class="stat__num">v2.0</span>
-              <span class="stat__label">migrazione template Tally completata senza perdita di dati</span>
+            <div class="metric">
+              <span class="metric__label">migrazione template Tally completata senza perdita di dati</span>
+              <span class="metric__num">v2.0</span>
             </div>
-            <div class="stat">
-              <span class="stat__num">2+</span>
-              <span class="stat__label">prodotti interni guidati end-to-end (Tally, Uboat)</span>
+            <div class="metric">
+              <span class="metric__label">prodotti interni guidati end-to-end (Tally, Uboat)</span>
+              <span class="metric__num">2+</span>
             </div>
           </div>
 
           <div class="narrative-grid">
             <div class="narrative-block">
-              <h4>Uboat — aste real-time</h4>
+              <h4>Uboat — e-commerce cliente (WordPress)</h4>
               <ul class="job__list">
-                <li>Progettato un microservizio real-time (WebSocket, Node.js) per la gestione di aste su prodotti, con coda per serializzare offerte concorrenti.</li>
+                <li>Progettato un microservizio real-time (WebSocket, Node.js) per aste su prodotti, con serializzazione delle offerte concorrenti tramite coda per evitare race condition — fino a ~200 utenti simultanei.</li>
               </ul>
             </div>
             <div class="narrative-block">
-              <h4>Tally — piattaforma landing page</h4>
+              <h4>Tally — SaaS landing page (prodotto agenzia)</h4>
               <ul class="job__list">
-                <li>Guidata la migrazione dei template alla v2.0: script di migrazione DynamoDB con fallback a default, senza perdita di dati su template legacy.</li>
-                <li>Integrazione dell'API OpenAI per la generazione automatica di contenuti testuali e di Magic Link per l'autenticazione utenti.</li>
+                <li>Guidata la migrazione dei template alla v2.0: generificate le chiavi dato e scritto uno script di migrazione per i JSON esistenti (DynamoDB), con fallback ai default per i campi mancanti — senza perdita di dati su template legacy.</li>
+                <li>Integrata l'elaborazione dei pagamenti con Stripe (checkout, webhook di stato, rimborsi) e l'API OpenAI per la generazione di contenuti testuali; autenticazione via provider esterno (Magic Link).</li>
               </ul>
             </div>
             <div class="narrative-block">
@@ -254,6 +367,7 @@
             <span class="tech-pill">WebSocket</span>
             <span class="tech-pill">Next.js</span>
             <span class="tech-pill">DynamoDB</span>
+            <span class="tech-pill">Stripe</span>
             <span class="tech-pill">OpenAI API</span>
             <span class="tech-pill">AWS</span>
             <span class="tech-pill">Nginx</span>
@@ -280,36 +394,36 @@
           </a>
         </div>
 
-        <div class="stats-row">
-          <div class="stat">
-            <span class="stat__num">20</span>
-            <span class="stat__label">locali attivi a Pisa</span>
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric__label">locali attivi a Pisa</span>
+            <span class="metric__num">20</span>
           </div>
-          <div class="stat">
-            <span class="stat__num">2→1</span>
-            <span class="stat__label">app unificate in un solo prodotto</span>
+          <div class="metric metric--signal">
+            <span class="metric__label">oversell sull'ultima unità disponibile</span>
+            <span class="metric__num">0</span>
           </div>
-          <div class="stat">
-            <span class="stat__num">v2</span>
-            <span class="stat__label">backend riscritto da zero</span>
+          <div class="metric">
+            <span class="metric__label">backend riscritto da zero</span>
+            <span class="metric__num">v2</span>
           </div>
         </div>
 
         <div class="narrative-grid">
           <div class="narrative-block">
             <h4>Il problema</h4>
-            <p>La v1 era divisa in due app separate — una per gli utenti, una per i locali — con flussi disallineati, duplicazione di logica e un'esperienza di onboarding poco scalabile per i merchant. Per crescere oltre i primi locali pilota serviva un ridisegno strutturale, non una patch.</p>
+            <p>La v1 girava su Firebase, priva di un vero backend: logica sparsa lato client, nessun modello dati strutturato e onboarding dei locali gestito a mano. Per reggere utenti reali e crescere oltre i primi locali pilota serviva un backend vero, non una patch sopra Firebase.</p>
           </div>
           <div class="narrative-block">
             <h4>La soluzione</h4>
-            <p>Migrazione a un'unica applicazione (v2): backend riscritto da zero in NestJS/TypeScript, con un modello dati pensato per scalare su più città e un flusso di onboarding self-service per i locali (profilo, offerte, gestione scorte) che ha sostituito la configurazione manuale della v1.</p>
+            <p>Backend riscritto da zero in NestJS/TypeScript, deploy su VM con CI/CD (GitHub Actions): modellazione dati strutturata, API di ricerca dei locali per città e un flusso di onboarding self-service (profilo, offerte, gestione scorte) che ha sostituito la configurazione manuale della v1.</p>
           </div>
           <div class="narrative-block">
             <h4>Dettagli tecnici</h4>
             <ul class="job__list">
-              <li>API di ricerca geolocalizzata dei locali, progettata per essere indipendente dalla città — propedeutica all'espansione oltre Pisa.</li>
+              <li>Prevenzione dell'oversell sull'ultima unità disponibile di un'offerta tramite decremento atomico transazionale, per gestire in modo consistente le richieste concorrenti.</li>
               <li>Storage e cache delle immagini delle offerte con invalidazione legata all'esaurimento reale delle scorte, evitando di servire contenuti relativi a offerte già terminate.</li>
-              <li>Flusso di onboarding merchant pensato per essere autonomo, riducendo il supporto manuale necessario per attivare un nuovo locale.</li>
+              <li>API di ricerca dei locali per città, pensata per scalare oltre Pisa.</li>
             </ul>
           </div>
         </div>
@@ -317,7 +431,7 @@
         <div class="tech-pills">
           <span class="tech-pill">NestJS</span>
           <span class="tech-pill">TypeScript</span>
-          <span class="tech-pill">Geolocalizzazione</span>
+          <span class="tech-pill">GitHub Actions</span>
           <span class="tech-pill">Cache immagini</span>
           <span class="tech-pill">Onboarding merchant</span>
         </div>
@@ -332,18 +446,18 @@
           </div>
         </div>
 
-        <div class="stats-row">
-          <div class="stat">
-            <span class="stat__num">50+</span>
-            <span class="stat__label">dipendenti che usano la sincronizzazione ogni giorno</span>
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric__label">dipendenti che usano la sincronizzazione ogni giorno</span>
+            <span class="metric__num">50+</span>
           </div>
-          <div class="stat">
-            <span class="stat__num">3</span>
-            <span class="stat__label">sistemi integrati end-to-end (Factorial, Calendar, Tempo)</span>
+          <div class="metric">
+            <span class="metric__label">sistemi integrati end-to-end (Factorial, Calendar, Tempo)</span>
+            <span class="metric__num">3</span>
           </div>
-          <div class="stat stat--signal">
-            <span class="stat__num">1→0</span>
-            <span class="stat__label">check manuale settimanale sulle ferie eliminato per il management</span>
+          <div class="metric metric--signal">
+            <span class="metric__label">check manuale settimanale sulle ferie eliminato per il management</span>
+            <span class="metric__num">1→0</span>
           </div>
         </div>
 
@@ -355,6 +469,74 @@
           <div class="narrative-block">
             <h4>La soluzione</h4>
             <p>Costruito da zero un servizio di sincronizzazione con task real-time e un polling orario dedicato agli eventi dello stesso giorno (dove il real-time non basta), mappatura dei tipi di permesso/ticket tra i tre sistemi, dashboard admin con log degli errori, notifiche su Google Chat con pulsanti d'azione differenziati per tecnici e HR, e accesso via Google login con ruoli admin/viewer.</p>
+          </div>
+        </div>
+
+        <div class="diagram-block">
+          <p class="diagram-block__label">// architettura — sync factorial</p>
+          <div class="diagram-scroll-wrap">
+          <div class="diagram-scroll">
+            <svg class="diagram" viewBox="0 0 760 320" role="img" aria-label="Diagramma: Factorial invia un webhook al Sync Service (NestJS su GCP VM), che aggiorna Google Calendar e Atlassian Tempo, e invia alert su Google Chat e log alla dashboard admin.">
+              <defs>
+                <marker id="arrow-accent-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+                </marker>
+                <marker id="arrow-muted-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="var(--ink-3)"/>
+                </marker>
+              </defs>
+
+              <g class="dgm-node dgm-node--accent">
+                <rect x="16" y="132" width="140" height="56" rx="6"/>
+                <text x="86" y="155" text-anchor="middle" class="dgm-node-title">Factorial</text>
+                <text x="86" y="171" text-anchor="middle" class="dgm-node-sub">HR · webhook</text>
+              </g>
+
+              <g class="dgm-node dgm-node--accent">
+                <rect x="300" y="110" width="180" height="90" rx="6"/>
+                <text x="390" y="146" text-anchor="middle" class="dgm-node-title">Sync Service</text>
+                <text x="390" y="162" text-anchor="middle" class="dgm-node-sub">NestJS · GCP VM</text>
+                <text x="390" y="178" text-anchor="middle" class="dgm-node-sub">PostgreSQL</text>
+              </g>
+
+              <g class="dgm-node">
+                <rect x="580" y="30" width="164" height="54" rx="6"/>
+                <text x="662" y="53" text-anchor="middle" class="dgm-node-title">Google Calendar</text>
+                <text x="662" y="69" text-anchor="middle" class="dgm-node-sub">ferie &amp; permessi</text>
+              </g>
+
+              <g class="dgm-node">
+                <rect x="580" y="110" width="164" height="54" rx="6"/>
+                <text x="662" y="133" text-anchor="middle" class="dgm-node-title">Atlassian Tempo</text>
+                <text x="662" y="149" text-anchor="middle" class="dgm-node-sub">ticket timesheet</text>
+              </g>
+
+              <g class="dgm-node">
+                <rect x="300" y="232" width="180" height="50" rx="6"/>
+                <text x="390" y="253" text-anchor="middle" class="dgm-node-title">Google Chat</text>
+                <text x="390" y="269" text-anchor="middle" class="dgm-node-sub">alert azionabili</text>
+              </g>
+
+              <g class="dgm-node">
+                <rect x="580" y="232" width="164" height="50" rx="6"/>
+                <text x="662" y="253" text-anchor="middle" class="dgm-node-title">Dashboard admin</text>
+                <text x="662" y="269" text-anchor="middle" class="dgm-node-sub">log &amp; ruoli</text>
+              </g>
+
+              <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-2)" d="M156,160 L296,158"/>
+              <text x="226" y="146" text-anchor="middle" class="dgm-label--accent">webhook</text>
+              <text x="226" y="212" text-anchor="middle" class="dgm-label">meno dati sensibili esposti</text>
+
+              <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-2)" d="M480,135 C520,110 548,80 578,58"/>
+              <path class="dgm-arrow draw-path" marker-end="url(#arrow-accent-2)" d="M480,150 C520,150 548,140 578,138"/>
+
+              <path class="dgm-arrow--muted" marker-end="url(#arrow-muted-2)" d="M370,200 L370,230"/>
+              <text x="378" y="220" class="dgm-label">alert</text>
+              <path class="dgm-arrow--muted" marker-end="url(#arrow-muted-2)" d="M430,200 C480,215 540,222 578,234"/>
+              <text x="470" y="212" class="dgm-label">log</text>
+            </svg>
+          </div>
+          <p class="diagram-scroll-hint">← scorri per vedere tutto il diagramma →</p>
           </div>
         </div>
 
@@ -377,7 +559,7 @@
     </div>
   </section>
 
-  <section id="skills" class="section section--alt">
+  <section id="skills" class="section">
     <div class="container">
       <h2 class="section__title"><span>Lo stack</span> Competenze Tecniche</h2>
       <div class="skills-grid">
@@ -387,23 +569,15 @@
         </div>
         <div class="skill-group">
           <h4>Database</h4>
-          <p>PostgreSQL, DynamoDB</p>
+          <p>PostgreSQL (JSONB, indici GIN), Redis, DynamoDB</p>
         </div>
         <div class="skill-group">
           <h4>Cloud &amp; Infrastruttura</h4>
-          <p>GCP (Cloud Run, VM, Cloud Storage), AWS, Cloudflare, PM2, Nginx, Docker, GitHub Actions</p>
+          <p>GCP (Cloud Run, VM, Cloud Storage), AWS, Cloudflare, Docker, PM2, Nginx, GitHub Actions</p>
         </div>
         <div class="skill-group">
-          <h4>Architetture</h4>
-          <p>Sistemi ad alto traffico, caching multilivello, invalidazione cache, comunicazione real-time (WebSocket), elaborazione asincrona</p>
-        </div>
-        <div class="skill-group">
-          <h4>Messaging &amp; Async</h4>
-          <p>BullMQ, Azure Service Bus, GCP Pub/Sub, NestJS Task Scheduler</p>
-        </div>
-        <div class="skill-group">
-          <h4>Testing</h4>
-          <p>Unit, integration, E2E; load testing con k6</p>
+          <h4>Architetture &amp; Messaging</h4>
+          <p>Sistemi ad alto traffico, caching multilivello, invalidazione cache, integrazioni event-driven (Azure Service Bus), code asincrone (BullMQ), comunicazione real-time (WebSocket)</p>
         </div>
         <div class="skill-group">
           <h4>Monitoring &amp; Observability</h4>
@@ -411,22 +585,22 @@
         </div>
         <div class="skill-group">
           <h4>Integrazioni</h4>
-          <p>API OpenAI, provider di autenticazione esterni (Magic Link)</p>
+          <p>API OpenAI, Shopify (headless commerce, Admin API, webhooks), Stripe, provider di autenticazione esterni (Magic Link)</p>
         </div>
         <div class="skill-group">
-          <h4>Frontend (supporto)</h4>
-          <p>React, Next.js, Flutter</p>
+          <h4>Frontend</h4>
+          <p>React, Next.js</p>
         </div>
       </div>
 
       <div class="meta-grid">
         <div>
           <h4>Istruzione</h4>
-          <p>CdL in Informatica — Università di Pisa <span class="muted">(2018–2020)</span></p>
+          <p>Corso di Laurea in Informatica — Università di Pisa <span class="muted">(2018–2020)</span></p>
         </div>
         <div>
           <h4>Lingue</h4>
-          <p>Italiano: madrelingua · Inglese: B2 · Spagnolo: intermedio</p>
+          <p>Italiano: madrelingua · Inglese: B2 (lettura tecnica fluente) · Spagnolo: intermedio</p>
         </div>
       </div>
     </div>
@@ -449,6 +623,10 @@
           <span class="contact__label">LinkedIn</span>
           <span class="contact__value">linkedin.com/in/sebastiano-piccione</span>
         </a>
+        <a class="contact__item" href="https://github.com/sebpic1" target="_blank" rel="noopener">
+          <span class="contact__label">GitHub</span>
+          <span class="contact__value">github.com/sebpic1</span>
+        </a>
         <div class="contact__item contact__item--static">
           <span class="contact__label">Località</span>
           <span class="contact__value">Pisa, Italia</span>
@@ -467,7 +645,6 @@
 
 <script src="script.js"></script>
 
-<div id="cv-chat-widget"></div>
 <script>
   window.CV_CHAT_CONFIG = {
     apiUrl: 'https://cv-bot-backend-production.up.railway.app/chat',
