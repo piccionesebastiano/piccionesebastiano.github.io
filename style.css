@@ -392,7 +392,6 @@ svg text { font-family: var(--mono); }
   --border: var(--rule) !important;
   --accent: #35e0a1 !important;
   --accent-dim: rgba(53, 224, 161, 0.12) !important;
-  --accent-glow: rgba(53, 224, 161, 0.30) !important;
   --accent-hover: #2bc98d !important;
   --text: #e6edf0 !important;
   --text-muted: #8a979c !important;
@@ -400,27 +399,16 @@ svg text { font-family: var(--mono); }
   --error: #e0563d !important;
   --radius: 8px !important;
   --shadow: none !important;
-  position: static !important;
-  inset: auto !important;
   font-size: 14px !important;
 }
-#cv-chat-widget .cv-toggle,
-#cv-chat-widget .cv-backdrop,
-#cv-chat-widget .cv-panel::before {
-  display: none !important;
-}
 #cv-chat-widget .cv-panel {
-  position: static !important;
   width: 100% !important;
+  max-width: none !important;
   height: 560px !important;
   max-height: 70vh !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-  pointer-events: auto !important;
-  transition: none !important;
 }
 /* accent is a light fill — anything printed on it needs dark ink, not white */
 #cv-chat-widget .cv-send,
