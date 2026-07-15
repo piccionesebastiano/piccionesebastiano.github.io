@@ -834,13 +834,15 @@ svg text { font-family: var(--mono); }
   margin-bottom: 32px;
 }
 .contact__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .contact__item {
   display: flex;
   flex-direction: column;
+  flex: 0 1 auto;
+  width: auto;
   gap: 4px;
   padding: 20px 22px;
   background: var(--panel);
@@ -863,8 +865,7 @@ svg text { font-family: var(--mono); }
   font-weight: 500;
   color: var(--ink);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
 }
 
 /* ── Footer ───────────────────────────────────── */
@@ -919,6 +920,6 @@ svg text { font-family: var(--mono); }
 }
 
 @media (max-width: 560px) {
-  .contact__grid { grid-template-columns: 1fr; }
+  .contact__item { flex-basis: 100%; }
   .status-panel { max-width: 100%; }
 }
