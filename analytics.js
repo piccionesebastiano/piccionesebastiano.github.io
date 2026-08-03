@@ -28,12 +28,26 @@
     window.SITE_ANALYTICS_CONFIG || {},
   );
 
+  // Il sito dentro un iframe è l'anteprima della dashboard heatmap, non una
+  // visita: contarla sporcherebbe le statistiche con il traffico di chi le
+  // guarda. Il flag ?preview=1 è il marcatore esplicito usato dalla dashboard,
+  // il controllo sul frame copre qualunque altro incorporamento.
+  function isPreview() {
+    try {
+      if (window.top !== window.self) return true;
+    } catch (_) {
+      return true; // accesso negato ⇒ siamo comunque incorniciati
+    }
+    return /(^|[?&])preview=1(&|$)/.test(location.search);
+  }
+
   // Do Not Track e browser senza le API che servono: nessuna raccolta.
   if (
     navigator.doNotTrack === '1' ||
     window.doNotTrack === '1' ||
     !window.fetch ||
-    !window.sessionStorage
+    !window.sessionStorage ||
+    isPreview()
   ) {
     return;
   }
